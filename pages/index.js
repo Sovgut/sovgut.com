@@ -1,4 +1,5 @@
 import Head from "next/head"
+import { Component } from "react"
 import Attribute from "../components/Attribute"
 import Button from "../components/Button"
 import Class from "../components/Class"
