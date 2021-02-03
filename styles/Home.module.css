@@ -13,9 +13,13 @@
 
   justify-content: flex-end;
   list-style: none;
-  gap: 1rem;
+
   padding: 1rem;
   color: gray;
+}
+
+.header li {
+  margin-left: 1rem;
 }
 
 .header *:hover {
