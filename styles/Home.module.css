@@ -139,7 +139,15 @@
 
 @media (max-width: 767px) {
   .main section:first-of-type {
-    min-height: 600px;
+    min-height: max-content;
+  }
+
+  .main section .content .title {
+    margin-top: 1rem;
+  }
+
+  .main section:first-of-type .content {
+    grid-template-rows: max-content max-content;
   }
   .main section .content .title h1 {
     font-size: 3rem;
