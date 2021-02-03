@@ -1,11 +1,11 @@
 {
-  "name": "forge.next",
-  "version": "0.1.0",
+  "name": "sovgut.com",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start"
+    "start": "next start -p $PORT"
   },
   "dependencies": {
     "next": "10.0.6",
