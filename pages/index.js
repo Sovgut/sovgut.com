@@ -134,7 +134,10 @@ export default class Home extends Component {
               alignItems: "center",
             }}
           >
-            <div className={styles.content} style={{ width: "max-content" }}>
+            <div
+              className={[styles.content, styles.syntax].join(" ")}
+              style={{ width: "max-content" }}
+            >
               <Expression>instanceof</Expression> <Variable>font</Variable> ==={" "}
               <Class>
                 <a href="https://github.com/tonsky/FiraCode" target="_blank">
