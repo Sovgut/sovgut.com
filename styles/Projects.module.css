@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+
+  min-height: 60px;
+  width: 100%;
+  max-width: 4000px;
+  justify-content: center;
+  position: relative;
+}
+
+.content {
+  padding: 1rem;
+  max-width: 1920px;
+  width: 100%;
+  z-index: 2;
+}
+
+.sectionTitle {
+  font-style: normal;
+  font-weight: normal;
+}

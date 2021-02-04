@@ -1,0 +1,23 @@
+.container,
+.main {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+
+  min-height: 100vh;
+}
+
+.main section {
+  display: flex;
+
+  min-height: 60px;
+  width: 100%;
+  max-width: 4000px;
+  justify-content: center;
+  position: relative;
+}
+
+.main section:nth-child(odd) {
+  background: #0a0a0a;
+}

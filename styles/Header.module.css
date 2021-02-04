@@ -1,39 +1,20 @@
-.container,
-.main {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  align-items: center;
-
-  min-height: 100vh;
-  overflow-x: hidden;
-}
-
-.main section {
+.container {
   display: flex;
 
-  min-height: 60px;
   width: 100%;
   max-width: 4000px;
   justify-content: center;
   position: relative;
-}
-
-.main section:nth-child(odd) {
-  background: #0a0a0a;
-}
-
-.main section:first-of-type {
   min-height: 1000px;
 }
 
-.main section:first-of-type .content {
+.content {
   display: grid;
 
   grid-template-rows: 1fr 1fr;
 }
 
-.main section .dots {
+.dots {
   display: flex;
   position: absolute;
   width: 100%;
@@ -47,7 +28,7 @@
   background-size: 15px 15px;
 }
 
-.main section .background {
+.background {
   position: absolute;
   display: flex;
   width: 100%;
@@ -63,14 +44,14 @@
   background-repeat: no-repeat;
 }
 
-.main section .content {
+.content {
   padding: 1rem;
   max-width: 1920px;
   width: 100%;
   z-index: 2;
 }
 
-.main section .content .title {
+.title {
   display: flex;
   width: max-content;
   height: max-content;
@@ -79,24 +60,7 @@
   flex-direction: column;
 }
 
-.main section .content .title h1 {
-  font-size: 10rem;
-  font-style: normal;
-  font-weight: normal;
-  margin: 0;
-  z-index: 1;
-}
-
-.main section .content .title p {
-  font-size: 2.5rem;
-  z-index: 1;
-  margin: 0;
-  padding: 0;
-  margin-left: 5.5rem;
-  margin-bottom: 0.2rem;
-}
-
-.main section .content .titleBackground {
+.titleBackground {
   position: absolute;
 
   right: 2%;
@@ -107,7 +71,24 @@
   z-index: 0;
 }
 
-.main section .content .links {
+.title h1 {
+  font-size: 10rem;
+  font-style: normal;
+  font-weight: normal;
+  margin: 0;
+  z-index: 1;
+}
+
+.title p {
+  font-size: 2.5rem;
+  z-index: 1;
+  margin: 0;
+  padding: 0;
+  margin-left: 5.5rem;
+  margin-bottom: 0.2rem;
+}
+
+.links {
   display: flex;
 
   justify-content: flex-start;
@@ -116,49 +97,49 @@
 }
 
 @media (max-width: 1439px) {
-  .main section .content .title h1 {
+  .title h1 {
     font-size: 6rem;
   }
 
-  .main section .content .title p {
+  .title p {
     font-size: 1.5rem;
     margin-left: 3.5rem;
   }
 }
 
 @media (max-width: 899px) {
-  .main section .content .title h1 {
+  .title h1 {
     font-size: 5rem;
   }
 
-  .main section .content .title p {
+  .title p {
     font-size: 1.5rem;
     margin-left: 3rem;
   }
 }
 
 @media (max-width: 767px) {
-  .main section:first-of-type {
+  .container {
     min-height: max-content;
   }
 
-  .main section .content .title {
+  .title {
     margin-top: 1rem;
   }
 
-  .main section:first-of-type .content {
+  .content {
     grid-template-rows: max-content max-content;
   }
-  .main section .content .title h1 {
+  .title h1 {
     font-size: 3rem;
   }
 
-  .main section .content .title p {
+  .title p {
     font-size: 0.8rem;
     margin-left: 2rem;
   }
 
-  .main section .content .links {
+  .links {
     flex-direction: column;
     align-items: center;
     justify-content: flex-end;
@@ -166,47 +147,12 @@
 }
 
 @media (max-width: 424px) {
-  .main section .content .title h1 {
+  .title h1 {
     font-size: 2rem;
   }
 
-  .main section .content .title p {
+  .title p {
     font-size: 0.5rem;
     margin-left: 1.25rem;
   }
-}
-
-.main section .content .sectionTitle {
-  font-style: normal;
-  font-weight: normal;
-}
-
-.main section .content .cards {
-  display: grid;
-
-  grid-template-columns: 1fr 1fr;
-  grid-auto-rows: max-content;
-
-  grid-gap: 2rem;
-  gap: 2rem;
-}
-
-@media (max-width: 1024px) {
-  .main section .content .cards {
-    grid-template-columns: 1fr;
-  }
-}
-
-.main section .content .cards .card {
-  display: flex;
-  justify-content: flex-start;
-
-  align-items: center;
-  background: #0a0a0a;
-  padding: 2rem;
-  min-height: 200px;
-}
-
-.main .syntax {
-  color: #868686;
 }

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+
+  min-height: 60px;
+  width: 100%;
+  max-width: 4000px;
+  justify-content: center;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+}
+
+.content {
+  padding: 1rem;
+  max-width: 1920px;
+  width: max-content;
+  z-index: 2;
+}
