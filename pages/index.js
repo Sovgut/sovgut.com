@@ -35,14 +35,16 @@ export default class Application extends Component {
 }
 
 export async function getServerSideProps({ req, res }) {
-  console.log(req.headers)
+  if (req.headers["x-forwarded-proto"]) {
+    const protocol = req.headers["x-forwarded-proto"]
 
-  // if (res && protocol === "http" && process.env.NODE_ENV === "production") {
-  //   res.writeHead(301, {
-  //     Location: "https://sovgut.com",
-  //   })
-  //   res.end()
-  // }
+    if (protocol === "http" && process.env.NODE_ENV === "production") {
+      res.writeHead(301, {
+        Location: "https://sovgut.com",
+      })
+      res.end()
+    }
+  }
 
   return { props: {} }
 }
