@@ -1,5 +1,6 @@
 .syntax {
   color: #868686;
+  word-break: break-word;
 }
 
 .newline {
