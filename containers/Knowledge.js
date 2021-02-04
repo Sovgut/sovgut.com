@@ -15,7 +15,10 @@ export default function Knowledge() {
           What do I know and study at the moment?
         </h3>
         <div className={styles.cards}>
-          <div className={[styles.card, defaultStyles.syntax].join(" ")}>
+          <div
+            className={[styles.card, defaultStyles.syntax].join(" ")}
+            tabIndex="0"
+          >
             <div>
               /** <Variable>@use</Variable> In every project */
               <br />
@@ -23,7 +26,10 @@ export default function Knowledge() {
               <Class>Typescript</Class> & <Class>Javascript</Class>
             </div>
           </div>
-          <div className={[styles.card, defaultStyles.syntax].join(" ")}>
+          <div
+            className={[styles.card, defaultStyles.syntax].join(" ")}
+            tabIndex="0"
+          >
             <div>
               /** <Variable>@backend</Variable> Sequelize ORM tool */
               <br />
@@ -34,7 +40,10 @@ export default function Knowledge() {
               <Property>offset</Property> {"}"})
             </div>
           </div>
-          <div className={[styles.card, defaultStyles.syntax].join(" ")}>
+          <div
+            className={[styles.card, defaultStyles.syntax].join(" ")}
+            tabIndex="0"
+          >
             <div>
               /** <Variable>@frontend</Variable> React */
               <br />
@@ -57,7 +66,10 @@ export default function Knowledge() {
               {"}"}
             </div>
           </div>
-          <div className={[styles.card, defaultStyles.syntax].join(" ")}>
+          <div
+            className={[styles.card, defaultStyles.syntax].join(" ")}
+            tabIndex="0"
+          >
             <div>
               /** <Variable>@backend</Variable> NextJS */
               <br />
