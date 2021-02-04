@@ -35,7 +35,8 @@ export default class Application extends Component {
 }
 
 export async function getServerSideProps({ req, res }) {
-  const protocol = req.headers.referer.split("://")[0]
+  // const protocol = req.headers.referer.split("://")[0]
+  const protocol = String()
 
   if (res && protocol === "http" && process.env.NODE_ENV === "production") {
     res.writeHead(301, {
