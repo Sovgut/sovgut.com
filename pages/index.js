@@ -21,6 +21,7 @@ export default class Application extends Component {
       <div className={styles.container}>
         <Head>
           <title>Sergey Sovgut</title>
+          <meta name="description" content="Sovgut Sergey portfolio site" />
           <link type="image/png" sizes="16x16" rel="icon" href="/favicon.png" />
           <link type="image/png" sizes="32x32" rel="icon" href="/favicon.png" />
           <link type="image/png" sizes="96x96" rel="icon" href="/favicon.png" />
