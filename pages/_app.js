@@ -1,7 +1,7 @@
 import "../styles/globals.css"
 
-function App({ Component, pageProps }) {
+function Base({ Component, pageProps }) {
   return <Component {...pageProps} />
 }
 
-export default App
+export default Base

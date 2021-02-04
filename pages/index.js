@@ -12,7 +12,7 @@ export default class Application extends Component {
       <div className={styles.container}>
         <Head>
           <title>Sergey Sovgut</title>
-          <meta name="description" content="Sovgut Sergey portfolio site" />
+          <meta name="description" content="Sergey Sovgut portfolio site" />
           <link type="image/png" sizes="16x16" rel="icon" href="/favicon.png" />
           <link type="image/png" sizes="32x32" rel="icon" href="/favicon.png" />
           <link type="image/png" sizes="96x96" rel="icon" href="/favicon.png" />
@@ -35,15 +35,14 @@ export default class Application extends Component {
 }
 
 export async function getServerSideProps({ req, res }) {
-  // const protocol = req.headers.referer.split("://")[0]
-  const protocol = String()
+  console.log(req.headers)
 
-  if (res && protocol === "http" && process.env.NODE_ENV === "production") {
-    res.writeHead(301, {
-      Location: "https://sovgut.com",
-    })
-    res.end()
-  }
+  // if (res && protocol === "http" && process.env.NODE_ENV === "production") {
+  //   res.writeHead(301, {
+  //     Location: "https://sovgut.com",
+  //   })
+  //   res.end()
+  // }
 
   return { props: {} }
 }
