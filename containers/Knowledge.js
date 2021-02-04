@@ -11,7 +11,7 @@ export default function Knowledge() {
   return (
     <section className={styles.container} style={{ paddingBottom: "2rem" }}>
       <div className={styles.content}>
-        <h3 className={styles.sectionTitle}>
+        <h3 className={styles.sectionTitle} tabIndex="0">
           What do I know and study at the moment?
         </h3>
         <div className={styles.cards}>

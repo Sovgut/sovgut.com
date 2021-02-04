@@ -5,7 +5,9 @@ export default function Projects() {
   return (
     <section className={styles.container}>
       <div className={styles.content}>
-        <h3 className={styles.sectionTitle}>Developed projects</h3>
+        <h3 className={styles.sectionTitle} tabIndex="0">
+          Developed projects
+        </h3>
         <div className={defaultStyles.syntax}>
           <p>At the moment I have no public projects.</p>
         </div>
