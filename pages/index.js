@@ -7,15 +7,6 @@ import Projects from "../containers/Projects"
 import styles from "../styles/App.module.css"
 
 export default class Application extends Component {
-  componentDidMount() {
-    if (
-      process.env.NODE_ENV === "production" &&
-      !window.location.href.includes("https")
-    ) {
-      window.location.href = window.location.href.replace("http", "https")
-    }
-  }
-
   render() {
     return (
       <div className={styles.container}>
@@ -41,4 +32,17 @@ export default class Application extends Component {
       </div>
     )
   }
+}
+
+export async function getServerSideProps({ req, res }) {
+  const protocol = req.headers.referer.split("://")[0]
+
+  if (res && protocol === "http" && process.env.NODE_ENV === "production") {
+    res.writeHead(301, {
+      Location: "https://sovgut.com",
+    })
+    res.end()
+  }
+
+  return { props: {} }
 }

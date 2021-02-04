@@ -3,4 +3,6 @@ module.exports = {
     locales: ["en-US"],
     defaultLocale: "en-US",
   },
+  poweredByHeader: false,
+  generateEtags: false,
 }
