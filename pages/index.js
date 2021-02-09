@@ -40,7 +40,7 @@ export async function getServerSideProps({ req, res }) {
 
     if (protocol === "http" && process.env.NODE_ENV === "production") {
       res.writeHead(301, {
-        Location: "https://sovgut.com",
+        Location: `https://${req.headers["host"] || "sovgut.com"}`,
       })
       res.end()
     }
