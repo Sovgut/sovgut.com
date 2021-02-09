@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <section className={styles.container}>
       <div className={[styles.content, defaultStyles.syntax].join(" ")}>
-        <Expression>instanceof</Expression> <Variable>font</Variable> ==={" "}
+        <Variable>font</Variable> <Expression>instanceof</Expression>{" "}
         <Class>
           <a
             href="https://github.com/tonsky/FiraCode"
