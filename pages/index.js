@@ -38,7 +38,7 @@ export async function getServerSideProps({ req, res }) {
   if (req.headers["x-forwarded-proto"]) {
     const protocol = req.headers["x-forwarded-proto"]
 
-    if (protocol === "http" && process.env.NODE_ENV === "production") {
+    if (protocol === "http" && process.env.NODE_ENV !== "development") {
       res.writeHead(301, {
         Location: `https://${req.headers["host"] || "sovgut.com"}`,
       })

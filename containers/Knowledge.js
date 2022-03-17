@@ -31,13 +31,11 @@ export default function Knowledge() {
             tabIndex="0"
           >
             <div>
-              /** <Variable>@backend</Variable> Sequelize ORM tool */
+              /** <Variable>@backend</Variable> Prisma ORM */
               <br />
               <Expression>const</Expression> <Variable>posts</Variable> ={" "}
-              <Expression>await</Expression> <Class>Posts</Class>.
-              <Function>findAll</Function>({"{"} <Property>where</Property>:{" "}
-              <Variable>statement</Variable>, <Property>limit</Property>,{" "}
-              <Property>offset</Property> {"}"})
+              <Expression>await</Expression> <Class>PrismaClient</Class>.<Property>post</Property>.
+              <Function>findMany</Function>(<Property>query</Property>)
             </div>
           </div>
           <div
@@ -53,11 +51,11 @@ export default function Knowledge() {
               <span className={defaultStyles.newline}>
                 <Function>render</Function>() {"{"}
                 <span className={defaultStyles.newline}>
+                  <Expression>const</Expression>{" { "}<Variable>posts</Variable>{" } = "}<Variable>this</Variable>.<Property>props</Property>
+                  <br />
                   <Expression>return </Expression>
                   {"<"}
-                  <Class>RenderPosts</Class> <Attribute>posts</Attribute>={"{"}
-                  <Variable>this</Variable>.<Property>props</Property>.
-                  <Property>posts</Property>
+                  <Class>RenderPosts</Class> <Attribute>posts</Attribute>={"{"}<Variable>posts</Variable>
                   {"}"}
                   {" />"}
                 </span>
@@ -82,7 +80,7 @@ export default function Knowledge() {
                 <Expression>const</Expression> {"{"}{" "}
                 <Property>content</Property>: <Variable>posts </Variable>
                 {"}"} = <Expression>await</Expression>{" "}
-                <Class>PostService</Class>.<Function>getAll</Function>(
+                <Class>PostService</Class>.<Function>list</Function>(
                 <Attribute>context</Attribute>.<Property>req</Property>)
                 <br />
                 <br />
