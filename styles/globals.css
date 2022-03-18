@@ -23,3 +23,58 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.expression {
+  color: #c7667d;
+}
+
+.react-component,
+.react-component-close,
+.class-name,
+.class-name-usage {
+  color: #41d9a2;
+}
+
+.jsdoc-tag {
+  color: #00b2ff;
+}
+
+.function-name {
+  color: #afa1ff;
+}
+
+.function-param {
+  color: #ffffff;
+}
+
+.variable-1,
+.variable-2,
+.variable-3,
+.variable-4,
+.variable-5 {
+  color: #ffffff;
+}
+
+.property {
+  color: #ffffff;
+}
+
+.comment-section {
+  color: #808080;
+}
+
+.tab {
+  padding-left: 2rem;
+}
+
+@media (max-width: 1280px) {
+  .tab {
+    padding-left: 1.2vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .tab {
+    padding-left: 2vw;
+  }
+}

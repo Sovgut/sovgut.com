@@ -1,9 +1,21 @@
 .syntax {
-  color: #868686;
-  word-break: break-word;
+  color: #808080;
+  white-space: nowrap;
 }
 
 .newline {
   padding-left: 2rem;
   display: block;
+}
+
+@media (max-width: 1280px) {
+  .syntax {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 1024px) {
+  .syntax {
+    font-size: 2vw;
+  }
 }

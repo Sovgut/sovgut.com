@@ -1,13 +1,14 @@
-import Variable from "../components/Syntax/Variable"
-import Property from "../components/Syntax/Property"
-import Attribute from "../components/Syntax/Attribute"
-import Function from "../components/Syntax/Function"
-import Class from "../components/Syntax/Class"
-import Expression from "../components/Syntax/Expression"
 import styles from "../styles/Knowledge.module.css"
 import defaultStyles from "../styles/default.module.css"
+import syntax from "~lib/syntax"
 
 export default function Knowledge() {
+  const frontendTextClass = "/** @frontend React */\nclass React extends Component {\n\trender() {\n\t\tconst { posts } = this.props\n\t\treturn <RenderPosts posts={posts} />\n\t}\n}"
+  const frontendTextFunctional = "\n\nfunction RenderPosts({ posts }) {\n\treturn (\n\t\t<>\n\t\t\t{posts.map(post => (\n\t\t\t\t<article>\n\t\t\t\t\t<h2>{post.title}</h2>\n\t\t\t\t\t<p>{post.body}</p>\n\t\t\t\t</article>\n\t\t\t))}\n\t\t</>\n\t)\n}"
+  const inEveryProject = "/** @use In every project */\ntype Language = Typescript & Javascript";
+  const backendText = "/** @backend Prisma ORM */\nconst posts = await PrismaClient.post.findMany(query)"
+  const nextJS = "/** @backend NextJS */\nasync function getServerSideProps(context) {\n\tconst { content: posts } = await PostService.list(context.req)\n\n\treturn {\n\t\tprops: { posts }\n\t}\n}"
+
   return (
     <section className={styles.container} style={{ paddingBottom: "2rem" }}>
       <div className={styles.content}>
@@ -19,82 +20,26 @@ export default function Knowledge() {
             className={[styles.card, defaultStyles.syntax].join(" ")}
             tabIndex="0"
           >
-            <div>
-              /** <Variable>@use</Variable> In every project */
-              <br />
-              <Expression>type</Expression> <Class>Language</Class> ={" "}
-              <Class>Typescript</Class> & <Class>Javascript</Class>
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: syntax(inEveryProject) }} />
           </div>
           <div
             className={[styles.card, defaultStyles.syntax].join(" ")}
             tabIndex="0"
           >
-            <div>
-              /** <Variable>@backend</Variable> Prisma ORM */
-              <br />
-              <Expression>const</Expression> <Variable>posts</Variable> ={" "}
-              <Expression>await</Expression> <Class>PrismaClient</Class>.<Property>post</Property>.
-              <Function>findMany</Function>(<Property>query</Property>)
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: syntax(backendText) }} />
           </div>
           <div
             className={[styles.card, defaultStyles.syntax].join(" ")}
             tabIndex="0"
           >
-            <div>
-              /** <Variable>@frontend</Variable> React */
-              <br />
-              <Expression>class</Expression> <Class>React</Class>{" "}
-              <Expression>extends</Expression> <Class>Component</Class> {"{"}
-              <br />
-              <span className={defaultStyles.newline}>
-                <Function>render</Function>() {"{"}
-                <span className={defaultStyles.newline}>
-                  <Expression>const</Expression>{" { "}<Variable>posts</Variable>{" } = "}<Variable>this</Variable>.<Property>props</Property>
-                  <br />
-                  <Expression>return </Expression>
-                  {"<"}
-                  <Class>RenderPosts</Class> <Attribute>posts</Attribute>={"{"}<Variable>posts</Variable>
-                  {"}"}
-                  {" />"}
-                </span>
-                {"}"}
-              </span>
-              {"}"}
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: syntax(frontendTextClass + frontendTextFunctional) }} />
           </div>
           <div
             className={[styles.card, defaultStyles.syntax].join(" ")}
             tabIndex="0"
           >
-            <div>
-              /** <Variable>@backend</Variable> NextJS */
-              <br />
-              <Expression>
-                async
-              </Expression> <Expression>function</Expression>{" "}
-              <Function>getServerSideProps</Function>(
-              <Attribute>context</Attribute>) {"{"}
-              <span className={defaultStyles.newline}>
-                <Expression>const</Expression> {"{"}{" "}
-                <Property>content</Property>: <Variable>posts </Variable>
-                {"}"} = <Expression>await</Expression>{" "}
-                <Class>PostService</Class>.<Function>list</Function>(
-                <Attribute>context</Attribute>.<Property>req</Property>)
-                <br />
-                <br />
-                <Expression>return</Expression> {"{"}
-                <span className={defaultStyles.newline}>
-                  <Property>props</Property>: {"{"}
-                  <Property> posts </Property>
-                  {"}"}
-                </span>
-                {"}"}
-                <br />
-              </span>
-              {"}"}
-            </div>
+            <div dangerouslySetInnerHTML={{ __html: syntax(nextJS) }} />
+              
           </div>
         </div>
       </div>
