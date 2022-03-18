@@ -8,14 +8,8 @@
   display: block;
 }
 
-@media (max-width: 1280px) {
-  .syntax {
-    font-size: 1.2vw;
-  }
-}
-
 @media (max-width: 1024px) {
-  .syntax {
-    font-size: 2vw;
+  .syntax { 
+    font-size: 0.8rem;
   }
 }
